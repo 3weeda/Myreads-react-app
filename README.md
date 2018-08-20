@@ -20,7 +20,7 @@ MyReads Project
 3. Open a terminal and cd into the root folder of this repository.
 4. Run ```npm install```
 5. Run ```npm start```
-After following the installation steps above, the app will open in a new browser window/tab with this URL: [http://localhost:3000/](http://localhost:3000/)
+6. After following the installation steps above, the app will open in a new browser window/tab with this URL: [http://localhost:3000/](http://localhost:3000/)
 
 ## Project Instructions
 
