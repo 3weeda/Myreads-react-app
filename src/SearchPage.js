@@ -61,24 +61,23 @@ class SearchPage extends Component {
             {/* A condition controls the state of the book in the
               SearchPage, either it's shelf if it's already in my
               collection, or None if not */}
-            {/* I tried for hours to find a solution for this other than
-              the one in the study jam but couldn't, any advice? */}
-            {this.state.searchResultBooks.map(searchResultBook => {
-              let noneShelf = "none"
-              this.props.books.map((book) => (
-                book.id !== searchResultBook.id ?
-                noneShelf = book.shelf : ''
-              ))
-              return (
-                //Draw the UI of the searchResultBooks array
-                <li key={searchResultBook.id}>
-                  <Book
-                    book={searchResultBook}
-                    changeShelf={this.props.changeShelf}
-                    currentShelf={noneShelf}
-                  />
-                </li>
-            )})}
+            {/* I don't like this solution, do you have a better one, please? */}
+              {this.state.searchResultBooks.map(searchResultBook => {
+                let noneShelf = "none"
+                this.props.books.map((book) => (
+                  book.id === searchResultBook.id ?
+                  noneShelf = book.shelf : ''
+                ))
+                return (
+                  //Draw the UI of the searchResultBooks array
+                  <li key={searchResultBook.id}>
+                    <Book
+                      book={searchResultBook}
+                      changeShelf={this.props.changeShelf}
+                      currentShelf={noneShelf}
+                    />
+                  </li>
+              )})}
           </ol>
         </div>
       </div>
